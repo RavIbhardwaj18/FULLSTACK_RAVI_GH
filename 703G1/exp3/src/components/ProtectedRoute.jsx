@@ -1,8 +1,16 @@
-import React from 'react'
+
+import {Navigate} from 'react-router'
 
 function ProtectedRoute() {
-  return (
-    <div>ProtectedRoute</div>
+
+  const navigate =  Navigate();
+  const isLoggedin = localStorage.getItem("isLoggedin");
+  if(isLoggedin){
+   navigate = useNavigate();
+   
+  }
+    return (
+
   )
 }
 

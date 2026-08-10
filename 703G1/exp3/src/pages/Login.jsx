@@ -7,13 +7,27 @@ function Login() {
   });
 
   const handleChange = (e) => {
-  
+    const{name,value} = e.target;
+    console.log(name,value);
+    
+    setFormData ((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+
+
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    alert("Login Successful!");
+   if(formData.username === "admin" && formData.password === "admin123"){
+    localStorage.setItem("isLoggedin","true");
+    alert("succesfully logged in");
+   }
+   else{
+    alert("Invalid Details or id is  not present");
+   }
+ 
   };
 
   const styles = {
