@@ -59,8 +59,8 @@ function Login() {
       padding: "12px",
       marginBottom: "15px",
       border: "1px solid #ccc",
-      borderRadius: "6px",
-      fontSize: "16px",
+      borderRadius: "3px",
+      fontSize: "15px",
       boxSizing: "border-box",
     },
 
