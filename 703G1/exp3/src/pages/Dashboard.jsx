@@ -111,10 +111,33 @@ function Dashboard() {
           color:#6b7280;
           margin-top:30px;
         }
+          .logout-btn:hover{
+          background:#b91c1c;
+         transform:translateY(-3px);
+        } 
+          .logout-btn{
+          padding:10px 20px;
+          background:#dc2626;
+          color:white;
+          border:none;
+          border-radius:15px;
+          font-weight:bold;
+          font-size:15px;
+          cursor:pointer;
+          margin-bottom:10px;
+          margin-left:15px;
+          transition:0.2s;
+        }
       `}</style>
 
       <div className="dashboard">
+        
         <h1 className="title">📊 Student Dashboard</h1>
+        <button  className="logout-btn" 
+        onClick={()=>{
+          localStorage.removeItem("isLoogedIn")
+          window.location.href="/home"
+        }}>Logout</button>
         <p className="subtitle">Manage students and monitor statistics.</p>
 
         <div className="cards">

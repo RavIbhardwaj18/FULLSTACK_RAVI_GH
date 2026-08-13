@@ -1,32 +1,36 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 function Login() {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
 
   const handleChange = (e) => {
-    const{name,value} = e.target;
-    console.log(name,value);
-    
-    setFormData ((prevData) => ({
+    const { name, value } = e.target;
+    console.log(name, value);
+
+    setFormData((prevData) => ({  
       ...prevData,
       [name]: value,
     }));
-
-
+  
   };
 
   const handleSubmit = (e) => {
+ 
     e.preventDefault();
-   if(formData.username === "admin" && formData.password === "admin123"){
-    localStorage.setItem("isLoggedin","true");
-    alert("succesfully logged in");
-   }
-   else{
-    alert("Invalid Details or id is  not present");
-   }
+    if (formData.username === "admin" && formData.password === "admin123") {
+
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "/dashboard";
+
+    }
+    else {
+      alert("Invalid username or password");
+    }
  
   };
 
@@ -59,8 +63,8 @@ function Login() {
       padding: "12px",
       marginBottom: "15px",
       border: "1px solid #ccc",
-      borderRadius: "3px",
-      fontSize: "15px",
+      borderRadius: "6px",
+      fontSize: "16px",
       boxSizing: "border-box",
     },
 
